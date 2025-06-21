@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\MyController;
 // import controller
+use App\Http\Controllers\BackendController;
+use App\Http\Controllers\MyController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Admin;
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,3 +61,8 @@ Route::delete('buku/{id}', [MyController::class, 'destroy']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route untuk admin / backend
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', Admin::class]], function () {
+    Route::get('/', [BackendController::class, 'index']);
+});
