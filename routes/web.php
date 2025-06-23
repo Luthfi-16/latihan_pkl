@@ -2,9 +2,11 @@
 
 // import controller
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\MyController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Middleware\Admin;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -65,4 +67,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route untuk admin / backend
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', Admin::class]], function () {
     Route::get('/', [BackendController::class, 'index']);
+    // crud
+    Route::resource('category', CategoryController::class);
+    Route::resource('product', ProductController::class);
+
 });
