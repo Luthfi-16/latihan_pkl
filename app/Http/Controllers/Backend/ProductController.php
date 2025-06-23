@@ -108,7 +108,7 @@ class ProductController extends Controller
         $product->price       = $request->price;
         $product->stock       = $request->stock;
 
-// upload gambar
+        // upload gambar
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($product->image);
