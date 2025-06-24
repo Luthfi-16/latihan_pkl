@@ -5,8 +5,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Str;
 use Storage;
+use Str;
+
 class ProductController extends Controller
 {
     /**
@@ -72,7 +73,11 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product  = Product::findOrFail($id);
+        $category = Category::all();
+
+        return view('backend.product.show', compact('product', 'category'));
+
     }
 
     /**

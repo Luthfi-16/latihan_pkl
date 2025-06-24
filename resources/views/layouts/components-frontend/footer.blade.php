@@ -1,105 +1,132 @@
-<footer>
-    <div class="container-fluid">
-      <div class="border-bottom">
-        <div class="row mb-sm-12 mb-4">
-          <div class="col-md-3 col-6">
-            <h3 class="fs-4 fw-semibold mb-7">Applications</h3>
-            <ul class="d-flex flex-column gap-9">
-              <li>
-                <a href="../main/app-kanban.html" class="fs-4 text-body link-primary">Kanban</a>
-              </li>
-              <li>
-                <a href="../main/app-invoice.html" class="fs-4 text-body link-primary">Invoice
-                  List</a>
-              </li>
-              <li>
-                <a href="../main/eco-shop.html" class="fs-4 text-body link-primary">eCommerce</a>
-              </li>
-              <li>
-                <a href="../main/app-chat.html" class="fs-4 text-body link-primary">Chat</a>
-              </li>
-              <li>
-                <a href="../main/app-calendar.html" class="fs-4 text-body link-primary">Calendar</a>
-              </li>
-              <li>
-                <a href="../main/blog-posts.html" class="fs-4 text-body link-primary">Blog</a>
-              </li>
-            </ul>
+<!-- footer__section__start -->
+<div class="footer ">
+  <div class="footer__inner sp_top_80">
+  <div class="container sp_bottom_60">
+      <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="footer__widget">
+                  <h4 class="footer__title">About Us.</h4>
+                  <div class="footer__content">
+                      <p>Minimal E-Commerce is a dynamic and innovative online retail platform that offers a wide range of products to customers worldwide.</p>
+                  </div>
+                  <div class="footer__social__icon">
+                      <ul>
+                          <li><a target="_blank" title="Facebook-f" href="https://www.facebook.com/shopify"><i class="fab fa-facebook-f"></i></a></li>     
+                          
+                          
+                          <li><a target="_blank" title="Twitter" href="https://twitter.com/shopify"><i class="fab fa-twitter"></i></a></li>       
+                             
+                          
+                          
+                          <li><a target="_blank" title="Youtube" href="https://www.youtube.com/user/shopify"><i class="fab fa-youtube"></i></a></li>       
+                          
+                          
+                          <li><a target="_blank" title="Instagram" href="https://www.instagram.com/shopify/"><i class="fab fa-instagram"></i></a></li>       
+                          
+                          
+                          <li><a target="_blank" title="Tiktok" href="https://www.tiktok.com/@shopify"><i class="fab fa-tiktok"></i></a></li>       
+                          
+                          
+                          </ul>
+                  </div>
+                  <div class="footer__bottom">
+                        <h5>Guaranteed safe checkout</h5>
+                          <div class="footer__img">
+                              <ul>
+                                  <li>
+                                      <img src="{{ asset('assets/frontend/img/footer/footer__1.svg')}}" alt="">
+                                  </li>
+                                  <li>
+                                      <img src="{{ asset('assets/frontend/img/footer/footer__2.svg')}}" alt="">
+                                  </li>
+                                  <li>
+                                      <img src="{{ asset('assets/frontend/img/footer/footer__3.svg')}}" alt="">
+                                  </li>
+                                  <li>
+                                      <img src="{{ asset('assets/frontend/img/footer/footer__4.svg')}}" alt="">
+                                  </li>
+                                  <li>
+                                      <img src="{{ asset('assets/frontend/img/footer/footer__5.svg')}}" alt="">
+                                  </li>
+                                  <li>
+                                      <img src="{{ asset('assets/frontend/img/footer/footer__6.svg')}}" alt="">
+                                  </li>
+                              </ul>
+                          </div>
+              </div>
+              </div>
           </div>
-          <div class="col-md-3 col-6">
-            <h3 class="fs-4 fw-semibold mb-7">Forms</h3>
-            <ul class="d-flex flex-column gap-9">
-              <li>
-                <a href="../main/form-basic.html" class="fs-4 text-body link-primary">Form
-                  Basic</a>
-              </li>
-              <li>
-                <a href="../main/form-horizontal.html" class="fs-4 text-body link-primary">Form
-                  Horizontal</a>
-              </li>
-              <li>
-                <a href="../main/form-wizard.html" class="fs-4 text-body link-primary">Form
-                  Wizard</a>
-              </li>
-              <li>
-                <a href="../main/form-bootstrap-validation.html" class="fs-4 text-body link-primary">Form Validation
-                </a>
-              </li>
-              <li>
-                <a href="../main/form-editor-quill.html" class="fs-4 text-body link-primary">Quill Editor</a>
-              </li>
-            </ul>
+
+          <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+              <div class="footer__widget">
+                  <h4 class="footer__title">Quick Link</h4>
+                  <div class="footer__menu">
+                  <ul>
+                      <li><a href="/account">My Account</a></li>
+                      <li><a href="/cart">My Cart</a></li>
+                      <li><a href="/pages/wishlist">Wishlist</a></li>
+                      <li><a href="/">Gift Card</a></li>
+                      <li><a href="/pages/contact">Need Help?</a></li>
+                  </ul>
+                </div>
+              </div>
           </div>
-          <div class="col-md-3 col-6">
-            <h3 class="fs-4 fw-semibold mb-7">Tables</h3>
-            <ul class="d-flex flex-column gap-9">
-              <li>
-                <a href="../main/table-basic.html" class="fs-4 text-body link-primary">Basic
-                  Table</a>
-              </li>
-              <li>
-                <a href="../main/table-dark-basic.html" class="fs-4 text-body link-primary">Table
-                  Dark Basic</a>
-              </li>
-              <li>
-                <a href="../main/table-sizing.html" class="fs-4 text-body link-primary">Table
-                  Sizing</a>
-              </li>
-              <li>
-                <a href="../main/table-layout-coloured.html" class="fs-4 text-body link-primary">Coloured Table</a>
-              </li>
-              <li>
-                <a href="../main/table-datatable-basic.html" class="fs-4 text-body link-primary">Basic Initialisation</a>
-              </li>
-              <li>
-                <a href="../main/table-datatable-api.html" class="fs-4 text-body link-primary">API</a>
-              </li>
-            </ul>
+
+
+          <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+              <div class="footer__widget">
+                  <h4 class="footer__title">Information</h4>
+                  <div class="footer__menu">
+                  <ul>
+                      <li><a href="/account">About us</a></li>
+                      <li><a href="/cart">Contact</a></li>
+                      <li><a href="/pages/wishlist">Blogs</a></li>
+                      <li><a href="/">Gift Card</a></li>
+                      <li><a href="/pages/contact">Size Chart</a></li>
+                  </ul>
+                </div>
+              </div>
           </div>
-          <div class="col-md-3 col-6">
-            <h3 class="fs-4 fw-semibold mb-7">Follow us</h3>
-            <div class="d-flex gap-9">
-              <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-title="Facebook">
-                <img src="{{ asset('assets/backend/images/frontend-pages/icon-facebook.svg') }}" alt="facebook">
-              </a>
-              <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-title="Twitter">
-                <img src="{{ asset('assets/backend/images/frontend-pages/icon-twitter.svg') }}" alt="twitter">
-              </a>
-              <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-title="Instagram">
-                <img src="{{ asset('assets/backend/images/frontend-pages/icon-instagram.svg') }}" alt="instagram">
-              </a>
-            </div>
+
+          <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+              <div class="footer__widget">
+                  <h4 class="footer__title">Policies</h4>
+                  <div class="footer__menu">
+                  <ul>
+                      <li><a href="/account">Privacy Policy</a></li>
+                      <li><a href="/cart">Refund Policy</a></li>
+                      <li><a href="/pages/wishlist">Terms of Service</a></li>
+                      <li><a href="/">Gift Card</a></li>
+                      <li><a href="/pages/contact">Shipping Policy</a></li>
+                  </ul>
+                </div>
+              </div>
           </div>
-        </div>
+
+
+
       </div>
-      <div class="d-flex justify-content-between py-7 flex-md-nowrap flex-wrap gap-sm-0 gap-3">
-        <div class="d-flex gap-3 align-items-center">
-          <img src="{{ asset('assets/backend/images/logos/favicon.png') }}" alt="icon">
-          <p class="fs-4 mb-0">All rights reserved by Modernize. </p>
-        </div>
-        <div>
-          <p class="mb-0">Produced by <a target="_blank" href="https://adminmart.com/" class="text-primary link-primary">AdminMart</a>.</p>
+  </div>
+</div>
+
+  <div class="copyright">
+  <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="copyright__text">
+              
+              <p>© {{ date('Y') }} <strong>Minimalin</strong>. All rights reserved.</p>
+         
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+
+</div>
+<!-- footer__section__end -->
+
+
+
+
+<!-- modal__section__start -->
