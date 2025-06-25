@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">
                         <b>Data Produk</b>
-                        <a href="{{ route('product.create') }}" class="btn btn-info btn-sm" style="color: white;float: right;">
+                        <a href="{{ route('backend.product.create') }}" class="btn btn-info btn-sm" style="color: white;float: right;">
                             Tambah
                         </a>
                     </div>
@@ -36,9 +36,9 @@
                                             <td>Rp. {{ number_format( $data->price, '0',',','.')}}</td>
                                             <td>{{ $data->stock }}</td>
                                             <td>
-                                                <a href="{{ route('product.edit', $data->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a> 
-                                                <a href="{{ route('product.show', $data->id) }}" class="btn btn-sm btn-success"><i class="bi bi-card-text"></i></a> 
-                                                <a href="{{ route('product.destroy', $data->id) }}" class="btn btn-sm btn-danger" data-confirm-delete="true"><i class="bi bi-trash"></i></a>
+                                                <a href="{{ route('backend.product.edit', $data->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a> 
+                                                <a href="{{ route('backend.product.show', $data->id) }}" class="btn btn-sm btn-success"><i class="bi bi-card-text"></i></a> 
+                                                <a href="{{ route('backend.product.destroy', $data->id) }}" class="btn btn-sm btn-danger" data-confirm-delete="true"><i class="bi bi-trash"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -53,7 +53,7 @@ class User extends Authenticatable
     }
 
     // relasi one to many ke cart
-    public function review()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }
