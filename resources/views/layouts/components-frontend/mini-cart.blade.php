@@ -38,9 +38,16 @@
                 <p class="text-center p-3"> Keranjang Kosong </p>
                 @endforelse
                 
-                @php
-                    $total = $cartItems->sum(fn($item) => $item->qty * $item->product->price);
-                @endphp
+                @auth
+                    @php
+                        $total = collect($cartItems)->sum(fn($item) => $item->qty * $item->product->price);
+                    @endphp
+                @else
+                    @php
+                        $total = 0;
+                    @endphp
+                @endauth
+
             </div>
 
             <div class="minicart__footer">
@@ -50,6 +57,7 @@
                 </div>
                 <div class="minicart__button">
                     <a href="{{ route('cart.index') }}" class="default__button">View Cart</a>
+                    <a href="{{ route('cart.checkout') }}" class="default__button">Checkout</a>
                     {{-- <a href="{{ route('cart.checkout' )}}" class="default__button">Checkout</a> --}}
                 </div>
                 <div class="cart__note__text">

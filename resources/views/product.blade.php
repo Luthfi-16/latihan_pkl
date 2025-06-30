@@ -80,7 +80,7 @@
                                             <div class="grid__wraper">
                                                 <div class="grid__wraper__img">
                                                     <div class="grid__wraper__img__inner">
-                                                        <a href="{{ url('product/' . $data->id)}}">
+                                                        <a href="/product/{{ $data->slug }}">
                                                             <img class="primary__image" src=" {{ Storage::url($data->image) }}" alt="Primary Image">
                                                             <img class="secondary__image" src=" {{ Storage::url($data->image) }}" alt="Secondary Image">
                                                         </a>

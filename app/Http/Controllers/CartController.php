@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Product;
+use App\Models\Order;
 use Auth;
+use Str;
 
 class CartController extends Controller
 {
     public function index(){
         $cartItems = Cart::with('product')
-        ->where('user_id', auth()->id())
+        ->where('user_id', auth::id())
         ->get();
 
         return view('cart', compact('cartItems'));
@@ -63,7 +66,7 @@ class CartController extends Controller
         $cart->delete();
 
         toast('Product berhasil dihapus dari keranjang.', 'success');
-        return redirect()->route('cart.index');
+        return redirect()->back();
     }
 
     public function checkout(){
@@ -85,5 +88,23 @@ class CartController extends Controller
             'total_price' => $total,
             'status' => 'pending',
         ]);
-    }
+
+
+        foreach ($cartItems as $item) {
+            $product = Product::find($item->product_id);
+            $product->stock -= $item->qty;
+            $product->save();
+
+            $order->products()->attach($item->product_id, [
+                'qty' => $item->qty,
+                'price' => $item->product->price,
+            ]);
+        }
+
+        // hapus isi keranjang
+        Cart::where('user_id', auth()->id())->delete();
+
+        toast('Pesanan berhasil dibuat!', 'success');
+        return redirect()->route('orders.index');
+    } 
 }

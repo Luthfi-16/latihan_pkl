@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -13,7 +13,7 @@ class ReviewController extends Controller
         ]);
 
         $review = new Review();
-        $review->user_id = $request->user_id;
+        $review->user_id = auth()->id();
         $review->product_id = $request->product_id;
         $review->point = $request->point;
         $review->comment = $request->comment;

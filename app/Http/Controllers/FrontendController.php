@@ -5,6 +5,10 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Cart;
+use Auth;
+use Illuminate\Support\Collection;
+
+
 
 class FrontendController extends Controller
 {
@@ -28,7 +32,6 @@ class FrontendController extends Controller
 
     public function singleProduct(Product $product)
     {
-        $product = Product::findOrFail($product);
         return view('single_product', compact('product'));
     }
 

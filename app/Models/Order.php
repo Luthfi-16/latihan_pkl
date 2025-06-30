@@ -9,7 +9,7 @@ class Order extends Model
     public $fillable = ['user_id', 'order_code', 'total_price', 'status'];
 
     // relasi many to many
-    public function product()
+    public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot('qty', 'price')->withTimestamps();
     }

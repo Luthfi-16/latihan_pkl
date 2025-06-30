@@ -9,6 +9,9 @@ use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Backend\OrdersController;
+use App\Http\Controllers\ReviewController;
 
 
 
@@ -70,8 +73,8 @@ Route::get('/', [FrontendController::class, 'index']);
 
 // product
 Route::get('/product', [FrontendController::class, 'product'])->name('product.index');
-Route::get('/product/{id}', [FrontendController::class, 'singleProduct'])->name('product.show');
-Route::get('/product/{slug}', [FrontendController::class, 'filterByCategory'])->name('product.filter');
+Route::get('/product/{product}', [FrontendController::class, 'singleProduct'])->name('product.show');
+Route::get('/product/category/{slug}', [FrontendController::class, 'filterByCategory'])->name('product.filter');
 Route::get('/search', [FrontendController::class, 'search'])->name('product.search');
 
 
@@ -83,6 +86,14 @@ Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart'])->nam
 Route::put('/cart/update/{id}', [CartController::class, 'updateCart'])->name('cart.update');
 Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
+// orders
+
+Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/orders{id}', [OrderController::class, 'show'])->name('orders.show');
+
+// review
+Route::post('/product/{product}/review', [ReviewController::class, 'store'])->name('review.store');
 
 Auth::routes();
 
@@ -94,5 +105,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
     // crud
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('orders', OrdersController::class);
+    Route::put('orders/{id}/status', [OrdersController::class, 'update'])->name('backend.orders.update');
 
 });

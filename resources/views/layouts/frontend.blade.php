@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/futura-std-4">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
-
+    @yield('styles')
 
 
 </head>
@@ -71,7 +71,9 @@
     <script src="{{ asset ('assets/frontend/js/fontawesome.min.js') }}"></script>
     <script src="{{ asset ('assets/frontend/js/plugins.js') }}"></script>
     <script src="{{ asset ('assets/frontend/js/main.js') }}"></script>
-
+    @include('sweetalert::alert')
+    @yield('js')
+    @stack('scripts')
 </body>
 
 </html>
